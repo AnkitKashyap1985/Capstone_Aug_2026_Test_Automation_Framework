@@ -1,0 +1,113 @@
+2026-11-11 08:38:08,175-INFO-mysql databse connection is being established..
+2026-11-11 08:38:08,176-INFO-mysql databse connection has been established..
+2026-11-11 08:38:08,177-INFO-Starting test: test_data_extraction_sales_file_stag
+2026-11-11 08:38:08,212-INFO-expected data :    sales_id  product_id  store_id  quantity  price   sale_date region
+0          1         101         1        10   15.0  2026-09-01   High
+1        101         101         1        10   15.0  2026-09-01   High
+2          2         102         1         5   25.0  2026-09-01    Low
+3          3         103         2         7   20.0  2026-09-02   High
+4          4         104         2         3   30.0  2026-09-03    Low
+..       ...         ...       ...       ...    ...         ...    ...
+58        58         108         2         6   24.0  2026-09-08    Low
+59        59         109         3        11   19.0  2026-09-09   High
+60        60         110         4         9   17.0  2026-09-10    Low
+61        59         109         3        11   19.0  2026-11-03   High
+62        60         110         4         9   17.0  2026-09-10    Low
+
+[63 rows x 7 columns]
+2026-11-11 08:38:08,274-INFO-actual data :    sales_id  product_id  store_id  quantity  price   sale_date region
+0          1         101         1        10   15.0  2026-09-01   High
+1          2         102         1         5   25.0  2026-09-01    Low
+2          3         103         2         7   20.0  2026-09-02   High
+3          4         104         2         3   30.0  2026-09-03    Low
+4          5         105         1        12   12.0  2026-09-05   High
+..       ...         ...       ...       ...    ...         ...    ...
+57        58         108         2         6   24.0  2026-09-08    Low
+58        59         109         3        11   19.0  2026-09-09   High
+59        60         110         4         9   17.0  2026-09-10    Low
+60        59         109         3        11   19.0  2026-11-03   High
+61        60         110         4         9   17.0  2026-09-10    Low
+
+[62 rows x 7 columns]
+2026-11-11 08:38:08,308-ERROR-test_data_extraction_sales_file_stag validation failed test_data_extraction_sales_file_stag failed
+2026-11-11 08:38:09,252-INFO-mysql databse connection has been terminated..
+2026-11-11 08:38:09,255-INFO-mysql databse connection is being established..
+2026-11-11 08:38:09,256-INFO-mysql databse connection has been established..
+2026-11-11 08:38:09,257-INFO-Starting test: test_data_extraction_inventory_file_stag
+2026-11-11 08:38:09,322-INFO-expected data :    product_id  store_id  quantity_on_hand last_updated
+0          101         1                50   2024-09-01
+1          102         1                30   2024-09-02
+2          103         2                40   2024-09-03
+3          106         3                25   2024-09-06
+4          107         1                35   2024-09-07
+5          108         2                45   2024-09-08
+6          109         3                55   2024-09-09
+7          110         3                65   2024-09-10
+8          101         4                50   2024-09-11
+9          102         4                40   2024-09-12
+10         103         5                30   2024-09-13
+11         104         5                20   2024-09-14
+12         105         6                50   2024-09-15
+13         106         6                60   2024-09-16
+14         107         7                30   2024-09-17
+15         108         7                40   2024-09-18
+16         109         8                45   2024-09-19
+17         110         8                55   2024-09-20
+18         101         9                65   2024-09-21
+19         102         9                75   2024-09-22
+20         103        10                80   2024-09-23
+21         104        10                90   2024-09-24
+22         106         2               110   2024-09-26
+23         107         3               120   2024-09-27
+24         108         4               130   2024-09-28
+25         109         5               140   2024-09-29
+26         110         6               150   2024-09-30
+27         101         7               160   2024-10-01
+28         102         8               170   2024-10-02
+29         103         9               180   2024-10-03
+2026-11-11 08:38:09,369-INFO-actual data :    product_id  store_id  quantity_on_hand last_updated
+0          101         1                50   2024-09-01
+1          102         1                30   2024-09-02
+2          103         2                40   2024-09-03
+3          106         3                25   2024-09-06
+4          107         1                35   2024-09-07
+5          108         2                45   2024-09-08
+6          109         3                55   2024-09-09
+7          110         3                65   2024-09-10
+8          101         4                50   2024-09-11
+9          102         4                40   2024-09-12
+10         103         5                30   2024-09-13
+11         104         5                20   2024-09-14
+12         105         6                50   2024-09-15
+13         106         6                60   2024-09-16
+14         107         7                30   2024-09-17
+15         108         7                40   2024-09-18
+16         109         8                45   2024-09-19
+17         110         8                55   2024-09-20
+18         101         9                65   2024-09-21
+19         102         9                75   2024-09-22
+20         103        10                80   2024-09-23
+21         104        10                90   2024-09-24
+22         106         2               110   2024-09-26
+23         107         3               120   2024-09-27
+24         108         4               130   2024-09-28
+25         109         5               140   2024-09-29
+26         110         6               150   2024-09-30
+27         101         7               160   2024-10-01
+28         102         8               170   2024-10-02
+29         103         9               180   2024-10-03
+2026-11-11 08:38:09,377-INFO-test_data_extraction_inventory_file_stag passed
+2026-11-11 08:38:09,377-INFO-succesfully competed test: test_data_extraction_inventory_file_stag
+2026-11-11 08:38:09,379-INFO-mysql databse connection has been terminated..
+2026-11-11 08:38:09,383-INFO-mysql databse connection is being established..
+2026-11-11 08:38:09,386-INFO-mysql databse connection has been established..
+2026-11-11 08:38:09,388-INFO-mysql databse connection has been terminated..
+2026-11-11 08:38:09,393-INFO-mysql databse connection is being established..
+2026-11-11 08:38:09,395-INFO-mysql databse connection has been established..
+2026-11-11 08:38:09,397-INFO-mysql databse connection has been terminated..
+2026-11-11 08:38:09,400-INFO-mysql databse connection is being established..
+2026-11-11 08:38:09,402-INFO-mysql databse connection has been established..
+2026-11-11 08:38:09,402-INFO-oracle databse connection is being established..
+2026-11-11 08:38:09,405-INFO-oracle databse connection has been established..
+2026-11-11 08:38:09,407-INFO-oracle databse connection has been terminated..
+2026-11-11 08:38:09,409-INFO-mysql databse connection has been terminated..

@@ -1,3 +1,5 @@
+from io import StringIO
+
 import  pandas as pd
 from sqlalchemy import create_engine,text
 import cx_Oracle
@@ -5,6 +7,8 @@ import logging
 from test_configuration.etl_config import *
 import pytest
 import os
+import boto3
+
 
 logging.basicConfig(
     filename='application_log/etlprocess.log',
@@ -26,7 +30,7 @@ class BaseUtility:
         elif file_type == "json":
             df = pd.read_json(file_path)
         elif file_type == "xml":
-            df = pd.read_json(file_path,xpath=".//item")
+            df = pd.read_xml(file_path,xpath=".//item")
         else:
             raise ValueError(f"unsupported file type {file_type}")
         return df
@@ -35,37 +39,116 @@ class BaseUtility:
     def read_file(self,file_path,file_type):
         return self.__read_file(file_path,file_type)
 
+    def read_file_from_s3(self,bucket_name, file_key):
+        try:
+            logger.info("Reading frile from S3 bucket")
+            s3 = boto3.client('s3')
+            response = s3.get_object(Bucket=bucket_name,key =file_key)
+            csv_content = response['Body'].read().decode('utf-8')
+            data = StringIO(csv_content)
+            df = pd.read_csv(data)
+            logger.info(f"S3 data is {df}")
+            return df
+        except Exception as e:
+            logger.error(f"S3 file read failed{e}")
+
+
+
 #Inheritance
 class ValidationUtility(BaseUtility):
 
-    def execute_validation(self,validation_type,test_case_name,file_path,file_type,query_actual,dbconn_actual):
-        try:
+    def execute_validation(self,validation_type=None,test_case_name=None,file_path=None,file_type=None,query_actual=None,dbconn_actual=None,query_expected=None,dbconn_expected=None,bucket_name=None, file_key=None):
+
             if validation_type == "FILE_TO_DB":
-                df_expected = self.read_file(file_path,file_type)
-                logger.info(f"expected data :{df_expected}")
-                df_actual = pd.read_sql(query_actual,dbconn_actual)
-                logger.info(f"actual data :{df_actual}")
-                # expected minus actual
-                df_extra_expected = df_expected[~df_expected.apply(tuple,axis=1).isin(df_actual.apply(tuple,axis=1))]
+                self.file_to_db(test_case_name, file_path, file_type, query_actual, dbconn_actual)
+            elif  validation_type == "DB_TO_DB":
+                self.db_to_db(test_case_name,query_expected, dbconn_expected, query_actual, dbconn_actual)
+            elif validation_type == "S3_TO_DB":
+                self.s3_to_db(test_case_name, bucket_name, file_key, query_actual, dbconn_actual)
 
-                # actual minus expected
-                df_extra_actual = df_actual[~df_actual.apply(tuple, axis=1).isin(df_expected.apply(tuple, axis=1))]
+    def file_to_db(self,test_case_name,file_path,file_type,query_actual,dbconn_actual):
+        try:
+            df_expected = self.read_file(file_path,file_type)
+            logger.info(f"expected data :{df_expected}")
+            df_actual = pd.read_sql(query_actual, dbconn_actual)
+            logger.info(f"actual data :{df_actual}")
+            # expected minus actual
+            df_extra_expected = df_expected[~df_expected.apply(tuple, axis=1).isin(df_actual.apply(tuple, axis=1))]
 
-                if not df_extra_expected.empty or not df_extra_actual.empty :
-                    os.makedirs("differences",exist_ok=True)
+            # actual minus expected
+            df_extra_actual = df_actual[~df_actual.apply(tuple, axis=1).isin(df_expected.apply(tuple, axis=1))]
 
-                    if not df_extra_expected.empty:
-                        df_extra_expected.to_csv(f"differences_{test_case_name}.csv",index=False)
+            if not df_extra_expected.empty or not df_extra_actual.empty:
+                os.makedirs("differences", exist_ok=True)
 
-                    if not df_extra_actual.empty:
-                        df_extra_actual.to_csv(f"differences_{test_case_name}.csv",index=False)
+                if not df_extra_expected.empty:
+                    df_extra_expected.to_csv(f"differences_extra_in_expected_{test_case_name}.csv", index=False)
 
-
-                # Assertion
-                assert df_actual.equals(df_expected),f"{test_case_name} failed"
-                logger.info(f"{test_case_name} passed")
+                if not df_extra_actual.empty:
+                    df_extra_actual.to_csv(f"differences_extra_in_actual_{test_case_name}.csv", index=False)
+            # Assertion
+            assert df_actual.equals(df_expected), f"{test_case_name} failed"
+            logger.info(f"{test_case_name} passed")
 
         except Exception as e:
             logger.error(f"{test_case_name} validation failed {e}")
             pytest.fail()
+
+    def db_to_db(self, test_case_name, query_expected, dbconn_expected, query_actual, dbconn_actual):
+        try:
+            df_expected= pd.read_sql(query_expected, dbconn_expected)
+            logger.info(f"expected data :{df_expected}")
+            df_actual = pd.read_sql(query_actual, dbconn_actual)
+            logger.info(f"actual data :{df_actual}")
+            # expected minus actual
+            df_extra_expected = df_expected[~df_expected.apply(tuple, axis=1).isin(df_actual.apply(tuple, axis=1))]
+
+            # actual minus expected
+            df_extra_actual = df_actual[~df_actual.apply(tuple, axis=1).isin(df_expected.apply(tuple, axis=1))]
+
+            if not df_extra_expected.empty or not df_extra_actual.empty:
+                os.makedirs("differences", exist_ok=True)
+
+                if not df_extra_expected.empty:
+                    df_extra_expected.to_csv(f"differences_{test_case_name}.csv", index=False)
+
+                if not df_extra_actual.empty:
+                    df_extra_actual.to_csv(f"differences_{test_case_name}.csv", index=False)
+            # Assertion
+            assert df_actual.equals(df_expected), f"{test_case_name} failed"
+            logger.info(f"{test_case_name} passed")
+
+        except Exception as e:
+            logger.error(f"{test_case_name} validation failed {e}")
+            pytest.fail()
+
+    def s3_to_db(self, test_case_name, bucket_name, file_key, query_actual, dbconn_actual):
+        try:
+            df_expected = self.read_file_from_s3(bucket_name, file_key)
+            logger.info(f"expected data :{df_expected}")
+            df_actual = pd.read_sql(query_actual, dbconn_actual)
+            logger.info(f"actual data :{df_actual}")
+            # expected minus actual
+            df_extra_expected = df_expected[~df_expected.apply(tuple, axis=1).isin(df_actual.apply(tuple, axis=1))]
+
+            # actual minus expected
+            df_extra_actual = df_actual[~df_actual.apply(tuple, axis=1).isin(df_expected.apply(tuple, axis=1))]
+
+            if not df_extra_expected.empty or not df_extra_actual.empty:
+                os.makedirs("differences", exist_ok=True)
+
+                if not df_extra_expected.empty:
+                    df_extra_expected.to_csv(f"differences_{test_case_name}.csv", index=False)
+
+                if not df_extra_actual.empty:
+                    df_extra_actual.to_csv(f"differences_{test_case_name}.csv", index=False)
+            # Assertion
+            assert df_actual.equals(df_expected), f"{test_case_name} failed"
+            logger.info(f"{test_case_name} passed")
+
+        except Exception as e:
+            logger.error(f"{test_case_name} validation failed {e}")
+            pytest.fail()
+
+
 
