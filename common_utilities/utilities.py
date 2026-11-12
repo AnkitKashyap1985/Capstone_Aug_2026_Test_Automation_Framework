@@ -1,5 +1,4 @@
 from io import StringIO
-
 import  pandas as pd
 from sqlalchemy import create_engine,text
 import cx_Oracle
@@ -8,6 +7,7 @@ from test_configuration.etl_config import *
 import pytest
 import os
 import boto3
+import paramiko
 
 
 logging.basicConfig(
@@ -41,9 +41,9 @@ class BaseUtility:
 
     def read_file_from_s3(self,bucket_name, file_key):
         try:
-            logger.info("Reading frile from S3 bucket")
+            logger.info("Reading file from S3 bucket")
             s3 = boto3.client('s3')
-            response = s3.get_object(Bucket=bucket_name,key =file_key)
+            response = s3.get_object(Bucket=bucket_name,Key =file_key)
             csv_content = response['Body'].read().decode('utf-8')
             data = StringIO(csv_content)
             df = pd.read_csv(data)
@@ -52,7 +52,18 @@ class BaseUtility:
         except Exception as e:
             logger.error(f"S3 file read failed{e}")
 
-
+    def linux_utility_download_file_from_linux_server(self):
+        try:
+            logger.info("File download from linux server has started....")
+            ssh_client = paramiko.SSHClient()
+            ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy)
+            ssh_client.connect(LINUX_HOSTNAME, username=LINUX_USERNAME, password=LINUX_PASSWORD)
+            sftp = ssh_client.open_sftp()
+            sftp.get(REMOTE_FILE_PATH, LOCAL_FILE_PATH)
+            sftp.close()
+            logger.info("File download from linux server has completed....")
+        except Exception as e:
+            logger.error(f"Linux file download failed {e}")
 
 #Inheritance
 class ValidationUtility(BaseUtility):

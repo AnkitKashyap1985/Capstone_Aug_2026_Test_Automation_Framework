@@ -18,7 +18,9 @@ LINUX_HOSTNAME="192.168.0.8"
 LINUX_USERNAME="etlqalabs"
 LINUX_PASSWORD="root"
 REMOTE_FILE_PATH = "/home/etlqalabs/product_data.csv"
-LOCAL_FILE_PATH = "source_system/product_data_from_linux.csv"
+LOCAL_FILE_PATH = "test_data/product_data_from_linux.csv"
 
 
 # S3 config
+BUCKET_NAME = "bkt-product-data"
+FILE_KEY = "sales_data/sales_data.csv"
