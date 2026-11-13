@@ -161,5 +161,61 @@ class ValidationUtility(BaseUtility):
             logger.error(f"{test_case_name} validation failed {e}")
             pytest.fail()
 
+class FileUtility(BaseUtility):
+    def check_file_exists(self,file_path):
+        try:
+            return os.path.isfile(file_path)
+        except Exception as e:
+            logger.error(f"File existence check failed {e}")
 
+    def check_file_size(self,file_path):
+        try:
+            return os.path.getsize(file_path)>0
+        except Exception as e:
+            logger.error(f"File size check failed {e}")
 
+class DataQuality(BaseUtility):
+    # Duplicate checks functions
+    def check_duplicate_in_file(self,file_path,file_type):
+        try:
+            df = self.read_file(file_path,file_type)
+            if df.duplicated().any():
+                return False
+            return True
+        except Exception as e:
+            logger.error(f"Duplicate check failed {e}")
+
+    def check_duplicate_in_database(self, query, db_conn):
+        pass
+
+    def check_duplicate_for_specific_column_in_file(self, file_path, file_type,column_name):
+        try:
+            df = self.read_file(file_path, file_type)
+            if df[column_name].duplicated().any():
+                return False
+            return True
+        except Exception as e:
+            logger.error(f"Duplicate check for column {column_name}failed {e}")
+
+    def check_duplicate_for_specific_column_in_database(self, query, db_conn, column_name):
+        pass
+
+    # Null checks functions
+
+    def check_null_value_in_file(self,file_path,file_type):
+        try:
+            df = self.read_file(file_path,file_type)
+            if df.isnull().values().any():
+                return False
+            return True
+        except Exception as e:
+            logger.error(f"Null check failed {e}")
+
+    def check_null_value_for_a_specific_column_in_file(self,file_path,file_type):
+        pass
+
+    def check_null_value_in_database(self, query, db_conn):
+        pass
+
+    def check_null_value_for_a_specific_colum_in_database(self, query, db_conn,column_name):
+        pass
