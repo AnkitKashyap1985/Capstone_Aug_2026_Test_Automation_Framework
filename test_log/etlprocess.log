@@ -1,7 +1,7 @@
-2026-11-13 12:13:18,179-INFO-mysql databse connection is being established..
-2026-11-13 12:13:18,179-INFO-mysql databse connection has been established..
-2026-11-13 12:13:18,181-INFO-Starting test: test_data_extraction_supplier_file_stag
-2026-11-13 12:13:18,399-INFO-expected data :   supplier_id         supplier_name    contact_name  ...    country rating last_order_date
+2026-11-16 08:30:34,406-INFO-mysql databse connection is being established..
+2026-11-16 08:30:34,407-INFO-mysql databse connection has been established..
+2026-11-16 08:30:34,409-INFO-Starting test: test_data_extraction_supplier_file_stag
+2026-11-16 08:30:34,531-INFO-expected data :   supplier_id         supplier_name    contact_name  ...    country rating last_order_date
 0            1      ABC Distributors        John Doe  ...        USA    4.8      2024-11-20
 1            2     Global Goods Inc.      Jane Smith  ...     Canada    4.3      2024-11-19
 2            3   GreenTech Solutions  Robert Johnson  ...         UK    4.6      2024-11-18
@@ -14,7 +14,7 @@
 9           10         LatAm Imports   Olivia Harris  ...     Mexico    4.5      2024-11-20
 
 [10 rows x 8 columns]
-2026-11-13 12:13:18,514-INFO-actual data :   supplier_id         supplier_name    contact_name  ...    country rating last_order_date
+2026-11-16 08:30:34,604-INFO-actual data :   supplier_id         supplier_name    contact_name  ...    country rating last_order_date
 0            1      ABC Distributors        John Doe  ...        USA    4.8      2024-11-20
 1            2     Global Goods Inc.      Jane Smith  ...     Canada    4.3      2024-11-19
 2            3   GreenTech Solutions  Robert Johnson  ...         UK    4.6      2024-11-18
@@ -27,13 +27,13 @@
 9           10         LatAm Imports   Olivia Harris  ...     Mexico    4.5      2024-11-20
 
 [10 rows x 8 columns]
-2026-11-13 12:13:18,528-INFO-test_data_extraction_supplier_file_stag passed
-2026-11-13 12:13:18,528-INFO-succesfully competed test: test_data_extraction_supplier_file_stag
-2026-11-13 12:13:18,528-INFO-mysql databse connection has been terminated..
-2026-11-13 12:13:18,540-INFO-mysql databse connection is being established..
-2026-11-13 12:13:18,542-INFO-mysql databse connection has been established..
-2026-11-13 12:13:18,542-INFO-Starting test: test_data_extraction_inventory_file_stag
-2026-11-13 12:13:18,960-INFO-expected data :    product_id  store_id  quantity_on_hand last_updated
+2026-11-16 08:30:34,617-INFO-test_data_extraction_supplier_file_stag passed
+2026-11-16 08:30:34,618-INFO-succesfully competed test: test_data_extraction_supplier_file_stag
+2026-11-16 08:30:34,621-INFO-mysql databse connection has been terminated..
+2026-11-16 08:30:34,624-INFO-mysql databse connection is being established..
+2026-11-16 08:30:34,627-INFO-mysql databse connection has been established..
+2026-11-16 08:30:34,628-INFO-Starting test: test_data_extraction_inventory_file_stag
+2026-11-16 08:30:34,991-INFO-expected data :    product_id  store_id  quantity_on_hand last_updated
 0          101         1                50   2024-09-01
 1          102         1                30   2024-09-02
 2          103         2                40   2024-09-03
@@ -64,7 +64,7 @@
 27         101         7               160   2024-10-01
 28         102         8               170   2024-10-02
 29         103         9               180   2024-10-03
-2026-11-13 12:13:19,008-INFO-actual data :    product_id  store_id  quantity_on_hand last_updated
+2026-11-16 08:30:35,038-INFO-actual data :    product_id  store_id  quantity_on_hand last_updated
 0          101         1                50   2024-09-01
 1          102         1                30   2024-09-02
 2          103         2                40   2024-09-03
@@ -95,14 +95,14 @@
 27         101         7               160   2024-10-01
 28         102         8               170   2024-10-02
 29         103         9               180   2024-10-03
-2026-11-13 12:13:19,013-INFO-test_data_extraction_inventory_file_stag passed
-2026-11-13 12:13:19,013-INFO-succesfully competed test: test_data_extraction_inventory_file_stag
-2026-11-13 12:13:19,013-INFO-mysql databse connection has been terminated..
-2026-11-13 12:13:19,025-INFO-mysql databse connection is being established..
-2026-11-13 12:13:19,027-INFO-mysql databse connection has been established..
-2026-11-13 12:13:19,029-INFO-Starting test: test_data_extraction_product_file_stag
-2026-11-13 12:13:19,029-INFO-File already exists: test_data/product_data_from_linux.csv. Skipping download.
-2026-11-13 12:13:19,089-INFO-expected data :   product_id        product_name     category  price  stock_quantity    brand  rating
+2026-11-16 08:30:35,048-INFO-test_data_extraction_inventory_file_stag passed
+2026-11-16 08:30:35,048-INFO-succesfully competed test: test_data_extraction_inventory_file_stag
+2026-11-16 08:30:35,050-INFO-mysql databse connection has been terminated..
+2026-11-16 08:30:35,052-INFO-mysql databse connection is being established..
+2026-11-16 08:30:35,053-INFO-mysql databse connection has been established..
+2026-11-16 08:30:35,055-INFO-Starting test: test_data_extraction_product_file_stag
+2026-11-16 08:30:35,055-INFO-File already exists: test_data/product_data_from_linux.csv. Skipping download.
+2026-11-16 08:30:35,129-INFO-expected data :   product_id        product_name     category  price  stock_quantity    brand  rating
 0         101           iPhone 15  Smartphones    999              50    Apple     4.8
 1         102  Samsung Galaxy S23  Smartphones    899              75  Samsung     4.7
 2         103         Dell XPS 13      Laptops   1200              30     Dell     4.6
@@ -113,7 +113,7 @@
 7         108    Philips Hue Bulb   Smart Home     50             500  Philips     4.8
 8         109     Fitbit Charge 5    Wearables    150             150   Fitbit     4.6
 9         110   Kindle Paperwhite     eReaders    130              80   Amazon     4.7
-2026-11-13 12:13:19,153-INFO-actual data :   product_id        product_name     category  price  stock_quantity    brand  rating
+2026-11-16 08:30:35,214-INFO-actual data :   product_id        product_name     category  price  stock_quantity    brand  rating
 0         101           iPhone 15  Smartphones    999              50    Apple     4.8
 1         102  Samsung Galaxy S23  Smartphones    899              75  Samsung     4.7
 2         103         Dell XPS 13      Laptops   1200              30     Dell     4.6
@@ -124,17 +124,17 @@
 7         108    Philips Hue Bulb   Smart Home     50             500  Philips     4.8
 8         109     Fitbit Charge 5    Wearables    150             150   Fitbit     4.6
 9         110   Kindle Paperwhite     eReaders    130              80   Amazon     4.7
-2026-11-13 12:13:19,166-INFO-test_data_extraction_product_file_stag passed
-2026-11-13 12:13:19,166-INFO-succesfully competed test: test_data_extraction_product_file_stag
-2026-11-13 12:13:19,166-INFO-mysql databse connection has been terminated..
-2026-11-13 12:13:19,173-INFO-mysql databse connection is being established..
-2026-11-13 12:13:19,173-INFO-mysql databse connection has been established..
-2026-11-13 12:13:19,175-INFO-Starting test: test_data_extraction_sales_file_stag
-2026-11-13 12:13:19,175-INFO-Reading file from S3 bucket
-2026-11-13 12:13:19,261-INFO-Found credentials in shared credentials file: ~/.aws/credentials
-2026-11-13 12:13:21,245-ERROR-S3 file read failedAn error occurred (NoSuchKey) when calling the GetObject operation: The specified key does not exist.
-2026-11-13 12:13:21,251-INFO-expected data :None
-2026-11-13 12:13:21,318-INFO-actual data :    sales_id  product_id  store_id  quantity  price   sale_date region
+2026-11-16 08:30:35,223-INFO-test_data_extraction_product_file_stag passed
+2026-11-16 08:30:35,223-INFO-succesfully competed test: test_data_extraction_product_file_stag
+2026-11-16 08:30:35,226-INFO-mysql databse connection has been terminated..
+2026-11-16 08:30:35,229-INFO-mysql databse connection is being established..
+2026-11-16 08:30:35,230-INFO-mysql databse connection has been established..
+2026-11-16 08:30:35,232-INFO-Starting test: test_data_extraction_sales_file_stag
+2026-11-16 08:30:35,232-INFO-Reading file from S3 bucket
+2026-11-16 08:30:35,352-INFO-Found credentials in shared credentials file: ~/.aws/credentials
+2026-11-16 08:30:38,042-ERROR-S3 file read failedAn error occurred (NoSuchKey) when calling the GetObject operation: The specified key does not exist.
+2026-11-16 08:30:38,045-INFO-expected data :None
+2026-11-16 08:30:38,100-INFO-actual data :    sales_id  product_id  store_id  quantity  price   sale_date region
 0          1         101         1        10   15.0  2026-09-01   High
 1          2         102         1         5   25.0  2026-09-01    Low
 2          3         103         2         7   20.0  2026-09-02   High
@@ -148,18 +148,18 @@
 61        60         110         4         9   17.0  2026-09-10    Low
 
 [62 rows x 7 columns]
-2026-11-13 12:13:21,318-ERROR-test_data_extraction_sales_file_stag validation failed 'NoneType' object has no attribute 'apply'
-2026-11-13 12:13:21,984-INFO-mysql databse connection has been terminated..
-2026-11-13 12:13:21,984-INFO-mysql databse connection is being established..
-2026-11-13 12:13:21,984-INFO-mysql databse connection has been established..
-2026-11-13 12:13:21,984-INFO-oracle databse connection is being established..
-2026-11-13 12:13:21,984-INFO-oracle databse connection has been established..
-2026-11-13 12:13:22,002-INFO-oracle databse connection has been terminated..
-2026-11-13 12:13:22,004-INFO-mysql databse connection has been terminated..
-2026-11-13 12:13:22,008-INFO-mysql databse connection is being established..
-2026-11-13 12:13:22,008-INFO-mysql databse connection has been established..
-2026-11-13 12:13:22,009-INFO-Starting test: test_data_loading_for_monthly_sales_summary
-2026-11-13 12:13:22,064-INFO-expected data :    product_id  month  year  total_sales
+2026-11-16 08:30:38,100-ERROR-test_data_extraction_sales_file_stag validation failed 'NoneType' object has no attribute 'apply'
+2026-11-16 08:30:39,163-INFO-mysql databse connection has been terminated..
+2026-11-16 08:30:39,166-INFO-mysql databse connection is being established..
+2026-11-16 08:30:39,167-INFO-mysql databse connection has been established..
+2026-11-16 08:30:39,168-INFO-oracle databse connection is being established..
+2026-11-16 08:30:39,170-INFO-oracle databse connection has been established..
+2026-11-16 08:30:39,172-INFO-oracle databse connection has been terminated..
+2026-11-16 08:30:39,173-INFO-mysql databse connection has been terminated..
+2026-11-16 08:30:39,176-INFO-mysql databse connection is being established..
+2026-11-16 08:30:39,176-INFO-mysql databse connection has been established..
+2026-11-16 08:30:39,177-INFO-Starting test: test_data_loading_for_monthly_sales_summary
+2026-11-16 08:30:39,245-INFO-expected data :    product_id  month  year  total_sales
 0          101      9  2026        807.0
 1          101     10  2026        263.5
 2          102      9  2026        544.0
@@ -181,7 +181,7 @@
 18         109     11  2026        209.0
 19         110      9  2026        799.0
 20         110     10  2026        408.0
-2026-11-13 12:13:22,096-INFO-actual data :    product_id  month  year  total_sales
+2026-11-16 08:30:39,280-INFO-actual data :    product_id  month  year  total_sales
 0          101      9  2026        807.0
 1          101     10  2026        263.5
 2          102      9  2026        544.0
@@ -203,22 +203,22 @@
 18         109     11  2026        209.0
 19         110      9  2026        799.0
 20         110     10  2026        408.0
-2026-11-13 12:13:22,108-INFO-test_data_loading_for_monthly_sales_summary passed
-2026-11-13 12:13:22,108-INFO-succesfully competed test: test_data_loading_for_monthly_sales_summary
-2026-11-13 12:13:22,112-INFO-mysql databse connection has been terminated..
-2026-11-13 12:13:22,116-INFO-mysql databse connection is being established..
-2026-11-13 12:13:22,116-INFO-mysql databse connection has been established..
-2026-11-13 12:13:22,120-INFO-mysql databse connection has been terminated..
-2026-11-13 12:13:22,122-INFO-mysql databse connection is being established..
-2026-11-13 12:13:22,122-INFO-mysql databse connection has been established..
-2026-11-13 12:13:22,127-INFO-mysql databse connection has been terminated..
-2026-11-13 12:13:22,131-INFO-mysql databse connection is being established..
-2026-11-13 12:13:22,131-INFO-mysql databse connection has been established..
-2026-11-13 12:13:22,131-INFO-mysql databse connection has been terminated..
-2026-11-13 12:13:22,202-INFO-mysql databse connection is being established..
-2026-11-13 12:13:22,206-INFO-mysql databse connection has been established..
-2026-11-13 12:13:22,206-INFO-Starting test: test_data_transformation_for_filter_sales_data
-2026-11-13 12:13:22,287-INFO-expected data :    sales_id  product_id  store_id  quantity  price   sale_date region
+2026-11-16 08:30:39,304-INFO-test_data_loading_for_monthly_sales_summary passed
+2026-11-16 08:30:39,304-INFO-succesfully competed test: test_data_loading_for_monthly_sales_summary
+2026-11-16 08:30:39,307-INFO-mysql databse connection has been terminated..
+2026-11-16 08:30:39,311-INFO-mysql databse connection is being established..
+2026-11-16 08:30:39,313-INFO-mysql databse connection has been established..
+2026-11-16 08:30:39,316-INFO-mysql databse connection has been terminated..
+2026-11-16 08:30:39,320-INFO-mysql databse connection is being established..
+2026-11-16 08:30:39,321-INFO-mysql databse connection has been established..
+2026-11-16 08:30:39,325-INFO-mysql databse connection has been terminated..
+2026-11-16 08:30:39,330-INFO-mysql databse connection is being established..
+2026-11-16 08:30:39,331-INFO-mysql databse connection has been established..
+2026-11-16 08:30:39,334-INFO-mysql databse connection has been terminated..
+2026-11-16 08:30:39,441-INFO-mysql databse connection is being established..
+2026-11-16 08:30:39,442-INFO-mysql databse connection has been established..
+2026-11-16 08:30:39,446-INFO-Starting test: test_data_transformation_for_filter_sales_data
+2026-11-16 08:30:39,565-INFO-expected data :    sales_id  product_id  store_id  quantity  price   sale_date region
 0          1         101         1        10   15.0  2026-09-01   High
 1          2         102         1         5   25.0  2026-09-01    Low
 2          3         103         2         7   20.0  2026-09-02   High
@@ -276,7 +276,7 @@
 54        60         110         4         9   17.0  2026-09-10    Low
 55        59         109         3        11   19.0  2026-11-03   High
 56        60         110         4         9   17.0  2026-09-10    Low
-2026-11-13 12:13:22,343-INFO-actual data :    sales_id  product_id  store_id  quantity  price   sale_date region
+2026-11-16 08:30:39,647-INFO-actual data :    sales_id  product_id  store_id  quantity  price   sale_date region
 0          1         101         1        10   15.0  2026-09-01   High
 1          2         102         1         5   25.0  2026-09-01    Low
 2          3         103         2         7   20.0  2026-09-02   High
@@ -334,21 +334,60 @@
 54        60         110         4         9   17.0  2026-09-10    Low
 55        59         109         3        11   19.0  2026-11-03   High
 56        60         110         4         9   17.0  2026-09-10    Low
-2026-11-13 12:13:22,353-INFO-test_data_transformation_for_filter_sales_data passed
-2026-11-13 12:13:22,355-INFO-succesfully competed test: test_data_transformation_for_filter_sales_data
-2026-11-13 12:13:22,355-INFO-mysql databse connection has been terminated..
-2026-11-13 12:13:22,358-INFO-mysql databse connection is being established..
-2026-11-13 12:13:22,360-INFO-mysql databse connection has been established..
-2026-11-13 12:13:22,360-INFO-mysql databse connection has been terminated..
-2026-11-13 12:13:22,362-INFO-mysql databse connection is being established..
-2026-11-13 12:13:22,364-INFO-mysql databse connection has been established..
-2026-11-13 12:13:22,365-INFO-mysql databse connection has been terminated..
-2026-11-13 12:13:22,367-INFO-mysql databse connection is being established..
-2026-11-13 12:13:22,370-INFO-mysql databse connection has been established..
-2026-11-13 12:13:22,370-INFO-mysql databse connection has been terminated..
-2026-11-13 12:13:22,370-INFO-mysql databse connection is being established..
-2026-11-13 12:13:22,370-INFO-mysql databse connection has been established..
-2026-11-13 12:13:22,370-INFO-mysql databse connection has been terminated..
-2026-11-13 12:13:22,370-INFO-mysql databse connection is being established..
-2026-11-13 12:13:22,370-INFO-mysql databse connection has been established..
-2026-11-13 12:13:22,379-INFO-mysql databse connection has been terminated..
+2026-11-16 08:30:39,661-INFO-test_data_transformation_for_filter_sales_data passed
+2026-11-16 08:30:39,661-INFO-succesfully competed test: test_data_transformation_for_filter_sales_data
+2026-11-16 08:30:39,664-INFO-mysql databse connection has been terminated..
+2026-11-16 08:30:39,667-INFO-mysql databse connection is being established..
+2026-11-16 08:30:39,669-INFO-mysql databse connection has been established..
+2026-11-16 08:30:39,673-INFO-mysql databse connection has been terminated..
+2026-11-16 08:30:39,676-INFO-mysql databse connection is being established..
+2026-11-16 08:30:39,677-INFO-mysql databse connection has been established..
+2026-11-16 08:30:39,680-INFO-mysql databse connection has been terminated..
+2026-11-16 08:30:39,685-INFO-mysql databse connection is being established..
+2026-11-16 08:30:39,686-INFO-mysql databse connection has been established..
+2026-11-16 08:30:39,689-INFO-mysql databse connection has been terminated..
+2026-11-16 08:30:39,693-INFO-mysql databse connection is being established..
+2026-11-16 08:30:39,694-INFO-mysql databse connection has been established..
+2026-11-16 08:30:39,698-INFO-mysql databse connection has been terminated..
+2026-11-16 08:30:39,702-INFO-mysql databse connection is being established..
+2026-11-16 08:30:39,704-INFO-mysql databse connection has been established..
+2026-11-16 08:30:39,708-INFO-mysql databse connection has been terminated..
+2026-11-16 08:30:39,713-INFO-mysql databse connection is being established..
+2026-11-16 08:30:39,715-INFO-mysql databse connection has been established..
+2026-11-16 08:30:39,716-INFO-Starting test: test_schema_validation_for_fact_sales_table_column_names_check
+2026-11-16 08:30:39,782-INFO-succesfully competed test: test_schema_validation_for_fact_sales_table_column_names_check
+2026-11-16 08:30:39,785-INFO-mysql databse connection has been terminated..
+2026-11-16 08:30:39,789-INFO-mysql databse connection is being established..
+2026-11-16 08:30:39,791-INFO-mysql databse connection has been established..
+2026-11-16 08:30:39,794-INFO-mysql databse connection has been terminated..
+2026-11-16 08:30:39,797-INFO-mysql databse connection is being established..
+2026-11-16 08:30:39,799-INFO-mysql databse connection has been established..
+2026-11-16 08:30:39,801-INFO-mysql databse connection has been terminated..
+2026-11-16 08:30:39,813-INFO-mysql databse connection is being established..
+2026-11-16 08:30:39,818-INFO-mysql databse connection has been established..
+2026-11-16 08:30:39,827-INFO-mysql databse connection has been terminated..
+2026-11-16 08:30:39,836-INFO-mysql databse connection is being established..
+2026-11-16 08:30:39,839-INFO-mysql databse connection has been established..
+2026-11-16 08:30:39,841-INFO-Starting test: test_schema_validation_for_fact_sales_table_column_data_type_check
+2026-11-16 08:30:39,894-INFO-succesfully competed test: test_schema_validation_for_fact_sales_table_column_data_type_check
+2026-11-16 08:30:39,898-INFO-mysql databse connection has been terminated..
+2026-11-16 08:30:39,904-INFO-mysql databse connection is being established..
+2026-11-16 08:30:39,910-INFO-mysql databse connection has been established..
+2026-11-16 08:30:39,916-INFO-mysql databse connection has been terminated..
+2026-11-16 08:30:39,923-INFO-mysql databse connection is being established..
+2026-11-16 08:30:39,927-INFO-mysql databse connection has been established..
+2026-11-16 08:30:39,935-INFO-mysql databse connection has been terminated..
+2026-11-16 08:30:39,949-INFO-mysql databse connection is being established..
+2026-11-16 08:30:39,951-INFO-mysql databse connection has been established..
+2026-11-16 08:30:39,957-INFO-mysql databse connection has been terminated..
+2026-11-16 08:30:39,965-INFO-mysql databse connection is being established..
+2026-11-16 08:30:39,969-INFO-mysql databse connection has been established..
+2026-11-16 08:30:39,972-INFO-Starting test: test_data_quality_referential_integrity_check_for_product_id_column_between_foreign_fact_sales_and_primary_stag_product
+2026-11-16 08:30:40,056-INFO-succesfully competed test: test_data_quality_referential_integrity_check_for_product_id_column_between_foreign_fact_sales_and_primary_stag_product
+2026-11-16 08:30:40,060-INFO-mysql databse connection has been terminated..
+2026-11-16 08:30:40,067-INFO-mysql databse connection is being established..
+2026-11-16 08:30:40,070-INFO-mysql databse connection has been established..
+2026-11-16 08:30:40,078-INFO-mysql databse connection has been terminated..
+2026-11-16 08:30:40,088-INFO-mysql databse connection is being established..
+2026-11-16 08:30:40,091-INFO-mysql databse connection has been established..
+2026-11-16 08:30:40,096-INFO-mysql databse connection has been terminated..

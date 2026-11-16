@@ -219,3 +219,34 @@ class DataQuality(BaseUtility):
 
     def check_null_value_for_a_specific_colum_in_database(self, query, db_conn,column_name):
         pass
+
+class SchemaValidationUtility(BaseUtility):
+    def validate_column_names(self,db_conn,table_name,expected_column_names):
+        query = f"select * from {table_name}"
+        df = pd.read_sql(query,db_conn)
+        actual_column_names = list(df.columns)
+        assert actual_column_names == expected_column_names,(
+            f"\n Colmn mismatch in table {table_name}"
+            f"\n expectec columns :{expected_column_names}"
+            f"\n actual column names: {actual_column_names}"
+        )
+
+    def validate_column_datatypes(self, db_conn, table_name, expected_datatypes_dict):
+        query = f"select * from {table_name}"
+        df = pd.read_sql(query, db_conn)
+        for column_name,expected_datatype in expected_datatypes_dict.items():
+            actual_data_type = df[column_name].dtype
+            assert actual_data_type in expected_datatype, (
+                f"\n data type  mismatch in table {table_name}"
+                f"\n for  mismatch in column {column_name}"
+                f"\n expectec data type  :{expected_datatype}"
+                f"\n actual data type: {actual_data_type}"
+            )
+
+    def validate_referential_interity_check(self, primary_db_conn,foreign_db_conn,primary_query,foreign_query,key_column_name,cv_path):
+        foreign_df = pd.read_sql(foreign_query,foreign_db_conn)
+        primary_df = pd.read_sql(primary_query, primary_db_conn)
+        df_not_matched = foreign_df[~foreign_df[key_column_name].isin(primary_df[key_column_name])]
+        if not df_not_matched.empty:
+            df_not_matched.to_csv(cv_path,index=False)
+        return df_not_matched
