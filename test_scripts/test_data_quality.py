@@ -22,7 +22,8 @@ class TestDataQuality:
     file_utility = FileUtility()
     data_quality_utility = DataQuality()
 
-
+    @pytest.mark.data_quality
+    @pytest.mark.smoke
     def test_data_quality_file_existence_of_inventory_data_xml_file(self):
         try:
             file_status = self.file_utility.check_file_exists("test_data/inventory_data.xml")
@@ -31,13 +32,17 @@ class TestDataQuality:
             logger.error(f"Error while cheking file existence {e}")
             pytest.fail(f"Error while cheking file existence {e}")
 
+    @pytest.mark.data_quality
+    @pytest.mark.skip
     def test_data_quality_file_existence_of_supplier_data_json_file(self):
         pass
 
+    @pytest.mark.data_quality
+    @pytest.mark.skip
     def test_data_quality_file_existence_of_products_data_csv_file(self):
         pass
 
-
+    @pytest.mark.data_quality
     def test_data_quality_file_size_of_inventory_data_xml_file(self):
         try:
             file_status = self.file_utility.check_file_size("test_data/inventory_data.xml")
@@ -46,13 +51,17 @@ class TestDataQuality:
             logger.error(f"Error while cheking file size {e}")
             pytest.fail(f"Error while cheking file size {e}")
 
+    @pytest.mark.data_quality
+    @pytest.mark.skip
     def test_data_quality_file_size_of_supplier_data_json_file(self):
         pass
 
+    @pytest.mark.data_quality
+    @pytest.mark.skip
     def test_data_quality_file_size_of_product_data_csv_file(self):
         pass
 
-
+    @pytest.mark.data_quality
     def test_data_quality_duplicate_check_for_supplier_data_json_file(self):
         try:
             duplicate_status = self.data_quality_utility.check_duplicate_in_file("test_data/supplier_data.json","json")

@@ -21,7 +21,7 @@ class TestSchemaValidation:
     validation_utility = ValidationUtility()
     schema_validation = SchemaValidationUtility()
 
-
+    @pytest.mark.schema_validation
     def test_schema_validation_for_fact_sales_table_column_names_check(self,connect_mysql_database):
         test_case_name = inspect.currentframe().f_code.co_name
         logger.info(f"Starting test: {test_case_name}")
@@ -37,17 +37,24 @@ class TestSchemaValidation:
             logger.error(f"test case failed {test_case_name}:{e}")
             pytest.fail()
 
+    @pytest.mark.schema_validation
+    @pytest.mark.skip
     def test_schema_validation_for_fact_inventory_table_column_names_check(self, connect_mysql_database):
         pass
 
-
+    @pytest.mark.schema_validation
+    @pytest.mark.skip
     def test_schema_validation_for_monthly_sales_summary_table_column_names_check(self, connect_mysql_database):
         pass
 
+    @pytest.mark.schema_validation
+    @pytest.mark.skip
     def test_schema_validation_for_inventory_level_by_stores_table_column_names_check(self, connect_mysql_database):
         pass
 
-
+    @pytest.mark.schema_validation
+    @pytest.mark.regression
+    @pytest.mark.smoke
     def test_schema_validation_for_fact_sales_table_column_data_type_check(self,connect_mysql_database):
         test_case_name = inspect.currentframe().f_code.co_name
         logger.info(f"Starting test: {test_case_name}")
@@ -69,18 +76,19 @@ class TestSchemaValidation:
             logger.error(f"test case failed {test_case_name}:{e}")
             pytest.fail()
 
+    @pytest.mark.skip
     def test_schema_validation_for_fact_inventory_table_column_data_type_check(self, connect_mysql_database):
         pass
 
-
+    @pytest.mark.skip
     def test_schema_validation_for_monthly_sales_summary_table_column_data_type_check(self, connect_mysql_database):
         pass
 
+    @pytest.mark.skip
     def test_schema_validation_for_inventory_level_by_stores_table_column_data_type_check(self, connect_mysql_database):
         pass
 
-
-
+    @pytest.mark.schema_validation
     def test_data_quality_referential_integrity_check_for_product_id_column_between_foreign_fact_sales_and_primary_stag_product(self,connect_mysql_database):
         test_case_name = inspect.currentframe().f_code.co_name
         logger.info(f"Starting test: {test_case_name}")
@@ -103,8 +111,12 @@ class TestSchemaValidation:
             logger.error(f"test case failed {test_case_name}:{e}")
             pytest.fail()
 
+    @pytest.mark.schema_validation
+    @pytest.mark.skip
     def test_data_quality_referential_integrity_check_for_sales_id_column_between_foreign_fact_sales_and_primary_stag_sales(self, connect_mysql_database):
         pass
 
+    @pytest.mark.schema_validation
+    @pytest.mark.skip
     def test_data_quality_referential_integrity_check_for_store_id_column_between_foreign_fact_sales_and_primary_stag_stores(self, connect_mysql_database):
         pass

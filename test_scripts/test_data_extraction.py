@@ -21,7 +21,11 @@ class TestDataExtraction:
     validation_utility = ValidationUtility()
     base_utility = BaseUtility()
 
+    @pytest.mark.data_extraction
+    @pytest.mark.regression
 
+    @pytest.mark.schema_validation
+    @pytest.mark.order(1)
     def test_data_extraction_supplier_file_stag(self,connect_mysql_database):
         test_case_name = inspect.currentframe().f_code.co_name
         logger.info(f"Starting test: {test_case_name}")
@@ -38,6 +42,9 @@ class TestDataExtraction:
             logger.error(f"test case failed {test_case_name}:{e}")
             pytest.fail()
 
+    @pytest.mark.data_extraction
+    @pytest.mark.regression
+    @pytest.mark.order(2)
     def test_data_extraction_inventory_file_stag(self,connect_mysql_database):
         test_case_name = inspect.currentframe().f_code.co_name
         logger.info(f"Starting test: {test_case_name}")
@@ -54,7 +61,9 @@ class TestDataExtraction:
             logger.error(f"test case failed {test_case_name}:{e}")
             pytest.fail()
 
-
+    @pytest.mark.data_extraction
+    @pytest.mark.smoke
+    @pytest.mark.order(3)
     def test_data_extraction_product_file_stag(self, connect_mysql_database):
         test_case_name = inspect.currentframe().f_code.co_name
         logger.info(f"Starting test: {test_case_name}")
@@ -77,6 +86,10 @@ class TestDataExtraction:
             logger.error(f"test case failed {test_case_name}:{e}")
             pytest.fail()
 
+    @pytest.mark.data_extraction
+    @pytest.mark.regression
+    @pytest.mark.smoke
+    @pytest.mark.order(5)
     def test_data_extraction_sales_file_stag(self, connect_mysql_database):
         test_case_name = inspect.currentframe().f_code.co_name
         logger.info(f"Starting test: {test_case_name}")
@@ -94,5 +107,8 @@ class TestDataExtraction:
             logger.error(f"test case failed {test_case_name}:{e}")
             pytest.fail()
 
+    @pytest.mark.data_extraction
+    @pytest.mark.regression
+    @pytest.mark.order(4)
     def test_data_extraction_stores_db_stag(self, connect_mysql_database,connect_oracle_database):
         pass

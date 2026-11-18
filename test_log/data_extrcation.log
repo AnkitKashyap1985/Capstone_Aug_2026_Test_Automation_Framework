@@ -1,0 +1,99 @@
+INFO     conftest:conftest.py:19 mysql databse connection is being established..
+INFO     conftest:conftest.py:22 mysql databse connection has been established..
+INFO     conftest:conftest.py:29 oracle databse connection is being established..
+INFO     conftest:conftest.py:32 oracle datINFO     common_utilities.utilities:utilities.py:83 expected data :   supplier_id         supplier_name  ... rating last_order_date
+0            1      ABC Distributors  ...    4.8      2024-11-20
+1            2     Global Goods Inc.  ...    4.3      2024-11-19
+2            3   GreenTech Solutions  ...    4.6      2024-11-18
+3            4              EuroWare  ...    4.2      2024-11-22
+4            5      Pacific Products  ...    4.7      2024-11-17
+5            6     Fresh Produce Co.  ...    4.4      2024-11-21
+6            7  TechCore Electronics  ...    4.9      2024-11-23
+7            8       HanYang Trading  ...    4.1      2024-11-16
+8            9         Indo Supplies  ...    4.3      2024-11-25
+9           10         LatAm Imports  ...    4.5      2024-11-20
+
+[10 rows x 8 columns]
+INFO     common_utilities.utilities:utilities.py:85 actual data :   supplier_id         supplier_name  ... rating last_order_date
+0            1      ABC Distributors  ...    4.8      2024-11-20
+1            2     Global Goods Inc.  ...    4.3      2024-11-19
+2            3   GreenTech Solutions  ...    4.6      2024-11-18
+3            4              EuroWare  ...    4.2      2024-11-22
+4            5      Pacific Products  ...    4.7      2024-11-17
+5            6     Fresh Produce Co.  ...    4.4      2024-11-21
+6            7  TechCore Electronics  ...    4.9      2024-11-23
+7            8       HanYang Trading  ...    4.1      2024-11-16
+8            9         Indo Supplies  ...    4.3      2024-11-25
+9           10         LatAm Imports  ...    4.5      2024-11-20
+
+[10 rows x 8 columns]
+INFO     common_utilities.utilities:utilities.py:102 test_data_extraction_supplier_file_stag passed
+INFO     test_scripts.test_data_extraction:test_data_extraction.py:40 succesfully competed test: test_data_extraction_supplier_file_stag
+INFO     conftest:conftest.py:24 mysql databse connection has been terminated..
+INFO     conftest:conftest.py:19 mysql databse connection is being established..
+INFO     conftest:conftest.py:22 mysql databse connection has been established..
+INFO     test_scripts.test_data_extraction:test_data_extraction.py:95 Starting test: test_data_extraction_sales_file_stag
+INFO     common_utilities.utilities:utilities.py:44 Reading file from S3 bucket
+INFO     botocore.credentials:credentials.py:1278 Found credentials in shared credentials file: ~/.aws/credentials
+ERROR    common_utilities.utilities:utilities.py:53 S3 file read failedAn error occurred (NoSuchKey) when calling the GetObject operation: The specified key does not exist.
+INFO     common_utilities.utilities:utilities.py:139 expected data :None
+INFO     common_utilities.utilities:utilities.py:141 actual data :    sales_id  product_id  store_id  quantity  price   sale_date region
+0          1         101         1        10   15.0  2026-09-01   High
+1          2         102         1         5   25.0  2026-09-01    Low
+2          3         103         2         7   20.0  2026-09-02   High
+3          4         104         2         3   30.0  2026-09-03    Low
+4          5         105         1        12   12.0  2026-09-05   High
+..       ...         ...       ...       ...    ...         ...    ...
+57        58         108         2         6   24.0  2026-09-08    Low
+58        59         109         3        11   19.0  2026-09-09   High
+59        60         110         4         9   17.0  2026-09-10    Low
+60        59         109         3        11   19.0  2026-11-03   High
+61        60         110         4         9   17.0  2026-09-10    Low
+
+[62 rows x 7 columns]
+ERROR    common_utilities.utilities:utilities.py:161 test_data_extraction_sales_file_stag validation failed 'NoneType' object has no attribute 'apply'
+INFO     conftest:conftest.py:24 mysql databse connection has been terminated..
+INFO     conftest:conftest.py:19 mysql databse connection is being established..
+INFO     conftest:conftest.py:22 mysql databse connection has been established..
+INFO     test_scripts.test_data_extraction:test_data_extraction.py:95 Starting test: test_data_extraction_sales_file_stag
+INFO     common_utilities.utilities:utilities.py:44 Reading file from S3 bucket
+ERROR    common_utilities.utilities:utilities.py:53 S3 file read failedAn error occurred (NoSuchKey) when calling the GetObject operation: The specified key does not exist.
+INFO     common_utilities.utilities:utilities.py:139 expected data :None
+INFO     common_utilities.utilities:utilities.py:141 actual data :    sales_id  product_id  store_id  quantity  price   sale_date region
+0          1         101         1        10   15.0  2026-09-01   High
+1          2         102         1         5   25.0  2026-09-01    Low
+2          3         103         2         7   20.0  2026-09-02   High
+3          4         104         2         3   30.0  2026-09-03    Low
+4          5         105         1        12   12.0  2026-09-05   High
+..       ...         ...       ...       ...    ...         ...    ...
+57        58         108         2         6   24.0  2026-09-08    Low
+58        59         109         3        11   19.0  2026-09-09   High
+59        60         110         4         9   17.0  2026-09-10    Low
+60        59         109         3        11   19.0  2026-11-03   High
+61        60         110         4         9   17.0  2026-09-10    Low
+
+[62 rows x 7 columns]
+ERROR    common_utilities.utilities:utilities.py:161 test_data_extraction_sales_file_stag validation failed 'NoneType' object has no attribute 'apply'
+INFO     conftest:conftest.py:24 mysql databse connection has been terminated..
+INFO     conftest:conftest.py:19 mysql databse connection is being established..
+INFO     conftest:conftest.py:22 mysql databse connection has been established..
+INFO     test_scripts.test_data_extraction:test_data_extraction.py:95 Starting test: test_data_extraction_sales_file_stag
+INFO     common_utilities.utilities:utilities.py:44 Reading file from S3 bucket
+ERROR    common_utilities.utilities:utilities.py:53 S3 file read failedAn error occurred (NoSuchKey) when calling the GetObject operation: The specified key does not exist.
+INFO     common_utilities.utilities:utilities.py:139 expected data :None
+INFO     common_utilities.utilities:utilities.py:141 actual data :    sales_id  product_id  store_id  quantity  price   sale_date region
+0          1         101         1        10   15.0  2026-09-01   High
+1          2         102         1         5   25.0  2026-09-01    Low
+2          3         103         2         7   20.0  2026-09-02   High
+3          4         104         2         3   30.0  2026-09-03    Low
+4          5         105         1        12   12.0  2026-09-05   High
+..       ...         ...       ...       ...    ...         ...    ...
+57        58         108         2         6   24.0  2026-09-08    Low
+58        59         109         3        11   19.0  2026-09-09   High
+59        60         110         4         9   17.0  2026-09-10    Low
+60        59         109         3        11   19.0  2026-11-03   High
+61        60         110         4         9   17.0  2026-09-10    Low
+
+[62 rows x 7 columns]
+ERROR    common_utilities.utilities:utilities.py:161 test_data_extraction_sales_file_stag validation failed 'NoneType' object has no attribute 'apply'
+INFO     conftest:conftest.py:24 mysql databse connection has been terminated..

@@ -19,8 +19,7 @@ class TestDataLoading:
     validation_utility = ValidationUtility()
     base_utility = BaseUtility()
 
-
-
+    @pytest.mark.data_loading
     def test_data_loading_for_monthly_sales_summary(self, connect_mysql_database):
         test_case_name = inspect.currentframe().f_code.co_name
         logger.info(f"Starting test: {test_case_name}")
@@ -38,12 +37,14 @@ class TestDataLoading:
             logger.error(f"test case failed {test_case_name}:{e}")
             pytest.fail()
 
-
+    @pytest.mark.data_loading
     def test_data_loading_for_fact_inventory(self, connect_mysql_database):
         pass
 
+    @pytest.mark.data_loading
     def test_data_loading_for_fact_sales(self, connect_mysql_database):
         pass
 
+    @pytest.mark.data_loading
     def test_data_loading_for_inventory_level_by_stores(self, connect_mysql_database):
         pass

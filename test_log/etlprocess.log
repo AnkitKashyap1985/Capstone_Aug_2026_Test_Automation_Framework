@@ -1,140 +1,43 @@
-2026-11-16 08:30:34,406-INFO-mysql databse connection is being established..
-2026-11-16 08:30:34,407-INFO-mysql databse connection has been established..
-2026-11-16 08:30:34,409-INFO-Starting test: test_data_extraction_supplier_file_stag
-2026-11-16 08:30:34,531-INFO-expected data :   supplier_id         supplier_name    contact_name  ...    country rating last_order_date
-0            1      ABC Distributors        John Doe  ...        USA    4.8      2024-11-20
-1            2     Global Goods Inc.      Jane Smith  ...     Canada    4.3      2024-11-19
-2            3   GreenTech Solutions  Robert Johnson  ...         UK    4.6      2024-11-18
-3            4              EuroWare     Emily White  ...    Germany    4.2      2024-11-22
-4            5      Pacific Products   Michael Brown  ...  Australia    4.7      2024-11-17
-5            6     Fresh Produce Co.    Sarah Taylor  ...     France    4.4      2024-11-21
-6            7  TechCore Electronics       David Lee  ...      Japan    4.9      2024-11-23
-7            8       HanYang Trading      Laura King  ...      China    4.1      2024-11-16
-8            9         Indo Supplies  James Williams  ...      India    4.3      2024-11-25
-9           10         LatAm Imports   Olivia Harris  ...     Mexico    4.5      2024-11-20
+2026-11-18 07:51:02,491-INFO-mysql databse connection is being established..
+2026-11-18 07:51:02,493-INFO-mysql databse connection has been established..
+2026-11-18 07:51:02,495-INFO-oracle databse connection is being established..
+2026-12026-11-18 07:51:02,600-INFO-expected data :   supplier_id         supplier_name  ... rating last_order_date
+0            1      ABC Distributors  ...    4.8      2024-11-20
+1            2     Global Goods Inc.  ...    4.3      2024-11-19
+2            3   GreenTech Solutions  ...    4.6      2024-11-18
+3            4              EuroWare  ...    4.2      2024-11-22
+4            5      Pacific Products  ...    4.7      2024-11-17
+5            6     Fresh Produce Co.  ...    4.4      2024-11-21
+6            7  TechCore Electronics  ...    4.9      2024-11-23
+7            8       HanYang Trading  ...    4.1      2024-11-16
+8            9         Indo Supplies  ...    4.3      2024-11-25
+9           10         LatAm Imports  ...    4.5      2024-11-20
 
 [10 rows x 8 columns]
-2026-11-16 08:30:34,604-INFO-actual data :   supplier_id         supplier_name    contact_name  ...    country rating last_order_date
-0            1      ABC Distributors        John Doe  ...        USA    4.8      2024-11-20
-1            2     Global Goods Inc.      Jane Smith  ...     Canada    4.3      2024-11-19
-2            3   GreenTech Solutions  Robert Johnson  ...         UK    4.6      2024-11-18
-3            4              EuroWare     Emily White  ...    Germany    4.2      2024-11-22
-4            5      Pacific Products   Michael Brown  ...  Australia    4.7      2024-11-17
-5            6     Fresh Produce Co.    Sarah Taylor  ...     France    4.4      2024-11-21
-6            7  TechCore Electronics       David Lee  ...      Japan    4.9      2024-11-23
-7            8       HanYang Trading      Laura King  ...      China    4.1      2024-11-16
-8            9         Indo Supplies  James Williams  ...      India    4.3      2024-11-25
-9           10         LatAm Imports   Olivia Harris  ...     Mexico    4.5      2024-11-20
+2026-11-18 07:51:02,733-INFO-actual data :   supplier_id         supplier_name  ... rating last_order_date
+0            1      ABC Distributors  ...    4.8      2024-11-20
+1            2     Global Goods Inc.  ...    4.3      2024-11-19
+2            3   GreenTech Solutions  ...    4.6      2024-11-18
+3            4              EuroWare  ...    4.2      2024-11-22
+4            5      Pacific Products  ...    4.7      2024-11-17
+5            6     Fresh Produce Co.  ...    4.4      2024-11-21
+6            7  TechCore Electronics  ...    4.9      2024-11-23
+7            8       HanYang Trading  ...    4.1      2024-11-16
+8            9         Indo Supplies  ...    4.3      2024-11-25
+9           10         LatAm Imports  ...    4.5      2024-11-20
 
 [10 rows x 8 columns]
-2026-11-16 08:30:34,617-INFO-test_data_extraction_supplier_file_stag passed
-2026-11-16 08:30:34,618-INFO-succesfully competed test: test_data_extraction_supplier_file_stag
-2026-11-16 08:30:34,621-INFO-mysql databse connection has been terminated..
-2026-11-16 08:30:34,624-INFO-mysql databse connection is being established..
-2026-11-16 08:30:34,627-INFO-mysql databse connection has been established..
-2026-11-16 08:30:34,628-INFO-Starting test: test_data_extraction_inventory_file_stag
-2026-11-16 08:30:34,991-INFO-expected data :    product_id  store_id  quantity_on_hand last_updated
-0          101         1                50   2024-09-01
-1          102         1                30   2024-09-02
-2          103         2                40   2024-09-03
-3          106         3                25   2024-09-06
-4          107         1                35   2024-09-07
-5          108         2                45   2024-09-08
-6          109         3                55   2024-09-09
-7          110         3                65   2024-09-10
-8          101         4                50   2024-09-11
-9          102         4                40   2024-09-12
-10         103         5                30   2024-09-13
-11         104         5                20   2024-09-14
-12         105         6                50   2024-09-15
-13         106         6                60   2024-09-16
-14         107         7                30   2024-09-17
-15         108         7                40   2024-09-18
-16         109         8                45   2024-09-19
-17         110         8                55   2024-09-20
-18         101         9                65   2024-09-21
-19         102         9                75   2024-09-22
-20         103        10                80   2024-09-23
-21         104        10                90   2024-09-24
-22         106         2               110   2024-09-26
-23         107         3               120   2024-09-27
-24         108         4               130   2024-09-28
-25         109         5               140   2024-09-29
-26         110         6               150   2024-09-30
-27         101         7               160   2024-10-01
-28         102         8               170   2024-10-02
-29         103         9               180   2024-10-03
-2026-11-16 08:30:35,038-INFO-actual data :    product_id  store_id  quantity_on_hand last_updated
-0          101         1                50   2024-09-01
-1          102         1                30   2024-09-02
-2          103         2                40   2024-09-03
-3          106         3                25   2024-09-06
-4          107         1                35   2024-09-07
-5          108         2                45   2024-09-08
-6          109         3                55   2024-09-09
-7          110         3                65   2024-09-10
-8          101         4                50   2024-09-11
-9          102         4                40   2024-09-12
-10         103         5                30   2024-09-13
-11         104         5                20   2024-09-14
-12         105         6                50   2024-09-15
-13         106         6                60   2024-09-16
-14         107         7                30   2024-09-17
-15         108         7                40   2024-09-18
-16         109         8                45   2024-09-19
-17         110         8                55   2024-09-20
-18         101         9                65   2024-09-21
-19         102         9                75   2024-09-22
-20         103        10                80   2024-09-23
-21         104        10                90   2024-09-24
-22         106         2               110   2024-09-26
-23         107         3               120   2024-09-27
-24         108         4               130   2024-09-28
-25         109         5               140   2024-09-29
-26         110         6               150   2024-09-30
-27         101         7               160   2024-10-01
-28         102         8               170   2024-10-02
-29         103         9               180   2024-10-03
-2026-11-16 08:30:35,048-INFO-test_data_extraction_inventory_file_stag passed
-2026-11-16 08:30:35,048-INFO-succesfully competed test: test_data_extraction_inventory_file_stag
-2026-11-16 08:30:35,050-INFO-mysql databse connection has been terminated..
-2026-11-16 08:30:35,052-INFO-mysql databse connection is being established..
-2026-11-16 08:30:35,053-INFO-mysql databse connection has been established..
-2026-11-16 08:30:35,055-INFO-Starting test: test_data_extraction_product_file_stag
-2026-11-16 08:30:35,055-INFO-File already exists: test_data/product_data_from_linux.csv. Skipping download.
-2026-11-16 08:30:35,129-INFO-expected data :   product_id        product_name     category  price  stock_quantity    brand  rating
-0         101           iPhone 15  Smartphones    999              50    Apple     4.8
-1         102  Samsung Galaxy S23  Smartphones    899              75  Samsung     4.7
-2         103         Dell XPS 13      Laptops   1200              30     Dell     4.6
-3         104      MacBook Pro 14      Laptops   2000              25    Apple     4.9
-4         105     Sony WH-1000XM5   Headphones    350             100     Sony     4.7
-5         106       Nike Air Zoom     Sneakers    120             200     Nike     4.5
-6         107      Samsung 55" TV  Electronics    700              40  Samsung     4.4
-7         108    Philips Hue Bulb   Smart Home     50             500  Philips     4.8
-8         109     Fitbit Charge 5    Wearables    150             150   Fitbit     4.6
-9         110   Kindle Paperwhite     eReaders    130              80   Amazon     4.7
-2026-11-16 08:30:35,214-INFO-actual data :   product_id        product_name     category  price  stock_quantity    brand  rating
-0         101           iPhone 15  Smartphones    999              50    Apple     4.8
-1         102  Samsung Galaxy S23  Smartphones    899              75  Samsung     4.7
-2         103         Dell XPS 13      Laptops   1200              30     Dell     4.6
-3         104      MacBook Pro 14      Laptops   2000              25    Apple     4.9
-4         105     Sony WH-1000XM5   Headphones    350             100     Sony     4.7
-5         106       Nike Air Zoom     Sneakers    120             200     Nike     4.5
-6         107      Samsung 55" TV  Electronics    700              40  Samsung     4.4
-7         108    Philips Hue Bulb   Smart Home     50             500  Philips     4.8
-8         109     Fitbit Charge 5    Wearables    150             150   Fitbit     4.6
-9         110   Kindle Paperwhite     eReaders    130              80   Amazon     4.7
-2026-11-16 08:30:35,223-INFO-test_data_extraction_product_file_stag passed
-2026-11-16 08:30:35,223-INFO-succesfully competed test: test_data_extraction_product_file_stag
-2026-11-16 08:30:35,226-INFO-mysql databse connection has been terminated..
-2026-11-16 08:30:35,229-INFO-mysql databse connection is being established..
-2026-11-16 08:30:35,230-INFO-mysql databse connection has been established..
-2026-11-16 08:30:35,232-INFO-Starting test: test_data_extraction_sales_file_stag
-2026-11-16 08:30:35,232-INFO-Reading file from S3 bucket
-2026-11-16 08:30:35,352-INFO-Found credentials in shared credentials file: ~/.aws/credentials
-2026-11-16 08:30:38,042-ERROR-S3 file read failedAn error occurred (NoSuchKey) when calling the GetObject operation: The specified key does not exist.
-2026-11-16 08:30:38,045-INFO-expected data :None
-2026-11-16 08:30:38,100-INFO-actual data :    sales_id  product_id  store_id  quantity  price   sale_date region
+2026-11-18 07:51:02,742-INFO-test_data_extraction_supplier_file_stag passed
+2026-11-18 07:51:02,743-INFO-succesfully competed test: test_data_extraction_supplier_file_stag
+2026-11-18 07:51:02,745-INFO-mysql databse connection has been terminated..
+2026-11-18 07:51:02,755-INFO-mysql databse connection is being established..
+2026-11-18 07:51:02,757-INFO-mysql databse connection has been established..
+2026-11-18 07:51:02,758-INFO-Starting test: test_data_extraction_sales_file_stag
+2026-11-18 07:51:02,758-INFO-Reading file from S3 bucket
+2026-11-18 07:51:02,830-INFO-Found credentials in shared credentials file: ~/.aws/credentials
+2026-11-18 07:51:04,433-ERROR-S3 file read failedAn error occurred (NoSuchKey) when calling the GetObject operation: The specified key does not exist.
+2026-11-18 07:51:04,436-INFO-expected data :None
+2026-11-18 07:51:04,475-INFO-actual data :    sales_id  product_id  store_id  quantity  price   sale_date region
 0          1         101         1        10   15.0  2026-09-01   High
 1          2         102         1         5   25.0  2026-09-01    Low
 2          3         103         2         7   20.0  2026-09-02   High
@@ -148,246 +51,49 @@
 61        60         110         4         9   17.0  2026-09-10    Low
 
 [62 rows x 7 columns]
-2026-11-16 08:30:38,100-ERROR-test_data_extraction_sales_file_stag validation failed 'NoneType' object has no attribute 'apply'
-2026-11-16 08:30:39,163-INFO-mysql databse connection has been terminated..
-2026-11-16 08:30:39,166-INFO-mysql databse connection is being established..
-2026-11-16 08:30:39,167-INFO-mysql databse connection has been established..
-2026-11-16 08:30:39,168-INFO-oracle databse connection is being established..
-2026-11-16 08:30:39,170-INFO-oracle databse connection has been established..
-2026-11-16 08:30:39,172-INFO-oracle databse connection has been terminated..
-2026-11-16 08:30:39,173-INFO-mysql databse connection has been terminated..
-2026-11-16 08:30:39,176-INFO-mysql databse connection is being established..
-2026-11-16 08:30:39,176-INFO-mysql databse connection has been established..
-2026-11-16 08:30:39,177-INFO-Starting test: test_data_loading_for_monthly_sales_summary
-2026-11-16 08:30:39,245-INFO-expected data :    product_id  month  year  total_sales
-0          101      9  2026        807.0
-1          101     10  2026        263.5
-2          102      9  2026        544.0
-3          102     10  2026        254.0
-4          103      9  2026        486.0
-5          103     10  2026        339.0
-6          104      9  2026        240.0
-7          104     10  2026        346.0
-8          105      9  2026        582.0
-9          105     10  2026        355.0
-10         106      9  2026        393.0
-11         106     10  2026        255.0
-12         107      9  2026        366.0
-13         107     10  2026        360.0
-14         108      9  2026        618.0
-15         108     10  2026        261.0
-16         109      9  2026        854.0
-17         109     10  2026        423.5
-18         109     11  2026        209.0
-19         110      9  2026        799.0
-20         110     10  2026        408.0
-2026-11-16 08:30:39,280-INFO-actual data :    product_id  month  year  total_sales
-0          101      9  2026        807.0
-1          101     10  2026        263.5
-2          102      9  2026        544.0
-3          102     10  2026        254.0
-4          103      9  2026        486.0
-5          103     10  2026        339.0
-6          104      9  2026        240.0
-7          104     10  2026        346.0
-8          105      9  2026        582.0
-9          105     10  2026        355.0
-10         106      9  2026        393.0
-11         106     10  2026        255.0
-12         107      9  2026        366.0
-13         107     10  2026        360.0
-14         108      9  2026        618.0
-15         108     10  2026        261.0
-16         109      9  2026        854.0
-17         109     10  2026        423.5
-18         109     11  2026        209.0
-19         110      9  2026        799.0
-20         110     10  2026        408.0
-2026-11-16 08:30:39,304-INFO-test_data_loading_for_monthly_sales_summary passed
-2026-11-16 08:30:39,304-INFO-succesfully competed test: test_data_loading_for_monthly_sales_summary
-2026-11-16 08:30:39,307-INFO-mysql databse connection has been terminated..
-2026-11-16 08:30:39,311-INFO-mysql databse connection is being established..
-2026-11-16 08:30:39,313-INFO-mysql databse connection has been established..
-2026-11-16 08:30:39,316-INFO-mysql databse connection has been terminated..
-2026-11-16 08:30:39,320-INFO-mysql databse connection is being established..
-2026-11-16 08:30:39,321-INFO-mysql databse connection has been established..
-2026-11-16 08:30:39,325-INFO-mysql databse connection has been terminated..
-2026-11-16 08:30:39,330-INFO-mysql databse connection is being established..
-2026-11-16 08:30:39,331-INFO-mysql databse connection has been established..
-2026-11-16 08:30:39,334-INFO-mysql databse connection has been terminated..
-2026-11-16 08:30:39,441-INFO-mysql databse connection is being established..
-2026-11-16 08:30:39,442-INFO-mysql databse connection has been established..
-2026-11-16 08:30:39,446-INFO-Starting test: test_data_transformation_for_filter_sales_data
-2026-11-16 08:30:39,565-INFO-expected data :    sales_id  product_id  store_id  quantity  price   sale_date region
+2026-11-18 07:51:04,476-ERROR-test_data_extraction_sales_file_stag validation failed 'NoneType' object has no attribute 'apply'
+2026-11-18 07:51:05,305-INFO-mysql databse connection has been terminated..
+2026-11-18 07:51:10,317-INFO-mysql databse connection is being established..
+2026-11-18 07:51:10,318-INFO-mysql databse connection has been established..
+2026-11-18 07:51:10,319-INFO-Starting test: test_data_extraction_sales_file_stag
+2026-11-18 07:51:10,319-INFO-Reading file from S3 bucket
+2026-11-18 07:51:11,017-ERROR-S3 file read failedAn error occurred (NoSuchKey) when calling the GetObject operation: The specified key does not exist.
+2026-11-18 07:51:11,022-INFO-expected data :None
+2026-11-18 07:51:11,083-INFO-actual data :    sales_id  product_id  store_id  quantity  price   sale_date region
 0          1         101         1        10   15.0  2026-09-01   High
 1          2         102         1         5   25.0  2026-09-01    Low
 2          3         103         2         7   20.0  2026-09-02   High
 3          4         104         2         3   30.0  2026-09-03    Low
 4          5         105         1        12   12.0  2026-09-05   High
-5          6         106         3         8   18.0  2026-09-06    Low
-6          7         107         1         4   22.0  2026-09-07   High
-7          8         108         2         6   24.0  2026-09-08    Low
-8          9         109         3        11   19.0  2026-09-09   High
-9         10         110         4         9   17.0  2026-09-10    Low
-10        11         101         4        15   14.0  2026-09-11   High
-11        12         102         5         9   27.0  2026-09-12    Low
-12        13         103         6        10   22.0  2026-09-13   High
-13        15         105         4        12   11.0  2026-09-15   High
-14        18         108         7         6   28.0  2026-09-18    Low
-15        19         109         8        11   20.0  2026-09-19   High
-16        20         110         9         9   19.5  2026-09-20    Low
-17        21         101         1        14   15.5  2026-09-21   High
-18        22         102         2         8   22.0  2026-09-22    Low
-19        23         103         3         7   18.0  2026-09-23   High
-20        24         104         4         6   25.0  2026-09-24    Low
-21        25         105         2        12   13.5  2026-09-25   High
-22        26         106         3         5   21.0  2026-09-26    Low
-23        27         107         1        10   19.0  2026-09-27   High
-24        28         108         5         6   27.0  2026-09-28    Low
-25        29         109         6         9   24.0  2026-09-29   High
-26        30         110         7         7   23.5  2026-09-30    Low
-27        31         101         4        13   14.5  2026-10-01   High
-28        32         102         5         6   29.0  2026-10-02    Low
-29        33         103         6         8   21.0  2026-10-03   High
-30        34         104         7         5   30.0  2026-10-04    Low
-31        35         105         4         7   15.0  2026-10-05   High
-32        36         106         5         3   25.0  2026-10-06    Low
-33        37         107         6        12   18.0  2026-10-07   High
-34        38         108         7         9   20.0  2026-10-08    Low
-35        39         109         8        10   22.0  2026-10-09   High
-36        40         110         9         6   26.0  2026-10-10    Low
-37        41         101         3         5   15.0  2026-10-11   High
-38        42         102         4         4   20.0  2026-10-12    Low
-39        43         103         5         9   19.0  2026-10-13   High
-40        44         104         6         7   28.0  2026-10-14    Low
-41        45         105         7        10   25.0  2026-10-15   High
-42        46         106         8         8   22.5  2026-10-16    Low
-43        47         107         9         6   24.0  2026-10-17   High
-44        48         108         1         3   27.0  2026-10-18    Low
-45        49         109         2        11   18.5  2026-10-19   High
-46        50         110         3        12   21.0  2026-10-20    Low
-47        53         101         2         7   20.0  2026-09-02   High
-48        54         101         2         3   30.0  2026-09-03    Low
-49        55         105         1        12   12.0  2026-09-05   High
-50        56         106         3         8   18.0  2026-09-06    Low
-51        57         107         1         4   22.0  2026-09-07   High
-52        58         108         2         6   24.0  2026-09-08    Low
-53        59         109         3        11   19.0  2026-09-09   High
-54        60         110         4         9   17.0  2026-09-10    Low
-55        59         109         3        11   19.0  2026-11-03   High
-56        60         110         4         9   17.0  2026-09-10    Low
-2026-11-16 08:30:39,647-INFO-actual data :    sales_id  product_id  store_id  quantity  price   sale_date region
+..       ...         ...       ...       ...    ...         ...    ...
+57        58         108         2         6   24.0  2026-09-08    Low
+58        59         109         3        11   19.0  2026-09-09   High
+59        60         110         4         9   17.0  2026-09-10    Low
+60        59         109         3        11   19.0  2026-11-03   High
+61        60         110         4         9   17.0  2026-09-10    Low
+
+[62 rows x 7 columns]
+2026-11-18 07:51:11,083-ERROR-test_data_extraction_sales_file_stag validation failed 'NoneType' object has no attribute 'apply'
+2026-11-18 07:51:11,130-INFO-mysql databse connection has been terminated..
+2026-11-18 07:51:16,145-INFO-mysql databse connection is being established..
+2026-11-18 07:51:16,146-INFO-mysql databse connection has been established..
+2026-11-18 07:51:16,148-INFO-Starting test: test_data_extraction_sales_file_stag
+2026-11-18 07:51:16,149-INFO-Reading file from S3 bucket
+2026-11-18 07:51:16,883-ERROR-S3 file read failedAn error occurred (NoSuchKey) when calling the GetObject operation: The specified key does not exist.
+2026-11-18 07:51:16,886-INFO-expected data :None
+2026-11-18 07:51:16,913-INFO-actual data :    sales_id  product_id  store_id  quantity  price   sale_date region
 0          1         101         1        10   15.0  2026-09-01   High
 1          2         102         1         5   25.0  2026-09-01    Low
 2          3         103         2         7   20.0  2026-09-02   High
 3          4         104         2         3   30.0  2026-09-03    Low
 4          5         105         1        12   12.0  2026-09-05   High
-5          6         106         3         8   18.0  2026-09-06    Low
-6          7         107         1         4   22.0  2026-09-07   High
-7          8         108         2         6   24.0  2026-09-08    Low
-8          9         109         3        11   19.0  2026-09-09   High
-9         10         110         4         9   17.0  2026-09-10    Low
-10        11         101         4        15   14.0  2026-09-11   High
-11        12         102         5         9   27.0  2026-09-12    Low
-12        13         103         6        10   22.0  2026-09-13   High
-13        15         105         4        12   11.0  2026-09-15   High
-14        18         108         7         6   28.0  2026-09-18    Low
-15        19         109         8        11   20.0  2026-09-19   High
-16        20         110         9         9   19.5  2026-09-20    Low
-17        21         101         1        14   15.5  2026-09-21   High
-18        22         102         2         8   22.0  2026-09-22    Low
-19        23         103         3         7   18.0  2026-09-23   High
-20        24         104         4         6   25.0  2026-09-24    Low
-21        25         105         2        12   13.5  2026-09-25   High
-22        26         106         3         5   21.0  2026-09-26    Low
-23        27         107         1        10   19.0  2026-09-27   High
-24        28         108         5         6   27.0  2026-09-28    Low
-25        29         109         6         9   24.0  2026-09-29   High
-26        30         110         7         7   23.5  2026-09-30    Low
-27        31         101         4        13   14.5  2026-10-01   High
-28        32         102         5         6   29.0  2026-10-02    Low
-29        33         103         6         8   21.0  2026-10-03   High
-30        34         104         7         5   30.0  2026-10-04    Low
-31        35         105         4         7   15.0  2026-10-05   High
-32        36         106         5         3   25.0  2026-10-06    Low
-33        37         107         6        12   18.0  2026-10-07   High
-34        38         108         7         9   20.0  2026-10-08    Low
-35        39         109         8        10   22.0  2026-10-09   High
-36        40         110         9         6   26.0  2026-10-10    Low
-37        41         101         3         5   15.0  2026-10-11   High
-38        42         102         4         4   20.0  2026-10-12    Low
-39        43         103         5         9   19.0  2026-10-13   High
-40        44         104         6         7   28.0  2026-10-14    Low
-41        45         105         7        10   25.0  2026-10-15   High
-42        46         106         8         8   22.5  2026-10-16    Low
-43        47         107         9         6   24.0  2026-10-17   High
-44        48         108         1         3   27.0  2026-10-18    Low
-45        49         109         2        11   18.5  2026-10-19   High
-46        50         110         3        12   21.0  2026-10-20    Low
-47        53         101         2         7   20.0  2026-09-02   High
-48        54         101         2         3   30.0  2026-09-03    Low
-49        55         105         1        12   12.0  2026-09-05   High
-50        56         106         3         8   18.0  2026-09-06    Low
-51        57         107         1         4   22.0  2026-09-07   High
-52        58         108         2         6   24.0  2026-09-08    Low
-53        59         109         3        11   19.0  2026-09-09   High
-54        60         110         4         9   17.0  2026-09-10    Low
-55        59         109         3        11   19.0  2026-11-03   High
-56        60         110         4         9   17.0  2026-09-10    Low
-2026-11-16 08:30:39,661-INFO-test_data_transformation_for_filter_sales_data passed
-2026-11-16 08:30:39,661-INFO-succesfully competed test: test_data_transformation_for_filter_sales_data
-2026-11-16 08:30:39,664-INFO-mysql databse connection has been terminated..
-2026-11-16 08:30:39,667-INFO-mysql databse connection is being established..
-2026-11-16 08:30:39,669-INFO-mysql databse connection has been established..
-2026-11-16 08:30:39,673-INFO-mysql databse connection has been terminated..
-2026-11-16 08:30:39,676-INFO-mysql databse connection is being established..
-2026-11-16 08:30:39,677-INFO-mysql databse connection has been established..
-2026-11-16 08:30:39,680-INFO-mysql databse connection has been terminated..
-2026-11-16 08:30:39,685-INFO-mysql databse connection is being established..
-2026-11-16 08:30:39,686-INFO-mysql databse connection has been established..
-2026-11-16 08:30:39,689-INFO-mysql databse connection has been terminated..
-2026-11-16 08:30:39,693-INFO-mysql databse connection is being established..
-2026-11-16 08:30:39,694-INFO-mysql databse connection has been established..
-2026-11-16 08:30:39,698-INFO-mysql databse connection has been terminated..
-2026-11-16 08:30:39,702-INFO-mysql databse connection is being established..
-2026-11-16 08:30:39,704-INFO-mysql databse connection has been established..
-2026-11-16 08:30:39,708-INFO-mysql databse connection has been terminated..
-2026-11-16 08:30:39,713-INFO-mysql databse connection is being established..
-2026-11-16 08:30:39,715-INFO-mysql databse connection has been established..
-2026-11-16 08:30:39,716-INFO-Starting test: test_schema_validation_for_fact_sales_table_column_names_check
-2026-11-16 08:30:39,782-INFO-succesfully competed test: test_schema_validation_for_fact_sales_table_column_names_check
-2026-11-16 08:30:39,785-INFO-mysql databse connection has been terminated..
-2026-11-16 08:30:39,789-INFO-mysql databse connection is being established..
-2026-11-16 08:30:39,791-INFO-mysql databse connection has been established..
-2026-11-16 08:30:39,794-INFO-mysql databse connection has been terminated..
-2026-11-16 08:30:39,797-INFO-mysql databse connection is being established..
-2026-11-16 08:30:39,799-INFO-mysql databse connection has been established..
-2026-11-16 08:30:39,801-INFO-mysql databse connection has been terminated..
-2026-11-16 08:30:39,813-INFO-mysql databse connection is being established..
-2026-11-16 08:30:39,818-INFO-mysql databse connection has been established..
-2026-11-16 08:30:39,827-INFO-mysql databse connection has been terminated..
-2026-11-16 08:30:39,836-INFO-mysql databse connection is being established..
-2026-11-16 08:30:39,839-INFO-mysql databse connection has been established..
-2026-11-16 08:30:39,841-INFO-Starting test: test_schema_validation_for_fact_sales_table_column_data_type_check
-2026-11-16 08:30:39,894-INFO-succesfully competed test: test_schema_validation_for_fact_sales_table_column_data_type_check
-2026-11-16 08:30:39,898-INFO-mysql databse connection has been terminated..
-2026-11-16 08:30:39,904-INFO-mysql databse connection is being established..
-2026-11-16 08:30:39,910-INFO-mysql databse connection has been established..
-2026-11-16 08:30:39,916-INFO-mysql databse connection has been terminated..
-2026-11-16 08:30:39,923-INFO-mysql databse connection is being established..
-2026-11-16 08:30:39,927-INFO-mysql databse connection has been established..
-2026-11-16 08:30:39,935-INFO-mysql databse connection has been terminated..
-2026-11-16 08:30:39,949-INFO-mysql databse connection is being established..
-2026-11-16 08:30:39,951-INFO-mysql databse connection has been established..
-2026-11-16 08:30:39,957-INFO-mysql databse connection has been terminated..
-2026-11-16 08:30:39,965-INFO-mysql databse connection is being established..
-2026-11-16 08:30:39,969-INFO-mysql databse connection has been established..
-2026-11-16 08:30:39,972-INFO-Starting test: test_data_quality_referential_integrity_check_for_product_id_column_between_foreign_fact_sales_and_primary_stag_product
-2026-11-16 08:30:40,056-INFO-succesfully competed test: test_data_quality_referential_integrity_check_for_product_id_column_between_foreign_fact_sales_and_primary_stag_product
-2026-11-16 08:30:40,060-INFO-mysql databse connection has been terminated..
-2026-11-16 08:30:40,067-INFO-mysql databse connection is being established..
-2026-11-16 08:30:40,070-INFO-mysql databse connection has been established..
-2026-11-16 08:30:40,078-INFO-mysql databse connection has been terminated..
-2026-11-16 08:30:40,088-INFO-mysql databse connection is being established..
-2026-11-16 08:30:40,091-INFO-mysql databse connection has been established..
-2026-11-16 08:30:40,096-INFO-mysql databse connection has been terminated..
+..       ...         ...       ...       ...    ...         ...    ...
+57        58         108         2         6   24.0  2026-09-08    Low
+58        59         109         3        11   19.0  2026-09-09   High
+59        60         110         4         9   17.0  2026-09-10    Low
+60        59         109         3        11   19.0  2026-11-03   High
+61        60         110         4         9   17.0  2026-09-10    Low
+
+[62 rows x 7 columns]
+2026-11-18 07:51:16,914-ERROR-test_data_extraction_sales_file_stag validation failed 'NoneType' object has no attribute 'apply'
+2026-11-18 07:51:16,947-INFO-mysql databse connection has been terminated..
