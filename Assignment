@@ -9,3 +9,11 @@ Data Loading test cases:
 
 Data Quality test cases:
 1. Complete all unimplemeted test cases
+
+Jenkins Assignments:
+1) create 2 jobs ( smoke and regression ), if smoke test is passed then automatically
+trigger regression test for detail test
+
+2) Schedule smoke tests job to run every 3 hours between Mon to FRI
+
+3) In case any job fails send a notification of this failure over email.
