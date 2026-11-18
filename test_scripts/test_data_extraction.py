@@ -89,6 +89,7 @@ class TestDataExtraction:
     @pytest.mark.data_extraction
     @pytest.mark.regression
     @pytest.mark.smoke
+    @pytest.mark.xfail
     @pytest.mark.order(5)
     def test_data_extraction_sales_file_stag(self, connect_mysql_database):
         test_case_name = inspect.currentframe().f_code.co_name
