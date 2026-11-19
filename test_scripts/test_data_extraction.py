@@ -37,7 +37,7 @@ class TestDataExtraction:
                                                        file_type="json",
                                                        query_actual=query_actual,
                                                        dbconn_actual=connect_mysql_database)
-            logger.info(f"succesfully competed test: {test_case_name}")
+            logger.info(f"successfully competed test: {test_case_name}")
         except Exception as e:
             logger.error(f"test case failed {test_case_name}:{e}")
             pytest.fail()
@@ -56,7 +56,7 @@ class TestDataExtraction:
                                                        file_type="xml",
                                                        query_actual=query_actual,
                                                        dbconn_actual=connect_mysql_database)
-            logger.info(f"succesfully competed test: {test_case_name}")
+            logger.info(f"successfully competed test: {test_case_name}")
         except Exception as e:
             logger.error(f"test case failed {test_case_name}:{e}")
             pytest.fail()
@@ -81,7 +81,7 @@ class TestDataExtraction:
                                                        file_type="csv",
                                                        query_actual=query_actual,
                                                        dbconn_actual=connect_mysql_database)
-            logger.info(f"succesfully competed test: {test_case_name}")
+            logger.info(f"successfully competed test: {test_case_name}")
         except Exception as e:
             logger.error(f"test case failed {test_case_name}:{e}")
             pytest.fail()
@@ -103,7 +103,7 @@ class TestDataExtraction:
                                                        file_key=FILE_KEY,
                                                        query_actual=query_actual,
                                                        dbconn_actual=connect_mysql_database)
-            logger.info(f"succesfully competed test: {test_case_name}")
+            logger.info(f"successfully competed test: {test_case_name}")
         except Exception as e:
             logger.error(f"test case failed {test_case_name}:{e}")
             pytest.fail()

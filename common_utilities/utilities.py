@@ -239,7 +239,7 @@ class SchemaValidationUtility(BaseUtility):
             assert actual_data_type in expected_datatype, (
                 f"\n data type  mismatch in table {table_name}"
                 f"\n for  mismatch in column {column_name}"
-                f"\n expectec data type  :{expected_datatype}"
+                f"\n expected data type  :{expected_datatype}"
                 f"\n actual data type: {actual_data_type}"
             )
 
